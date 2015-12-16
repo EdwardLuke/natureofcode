@@ -1,5 +1,8 @@
+import java.util.Random;
+
 class Walker {
   float x, y;
+  Random r = new Random();
   
   Walker() {
     x = width/2;
@@ -12,11 +15,8 @@ class Walker {
   }  
   
   void step() {
-    float maxStepSize = 10;
-    
-    float stepx = map(noise(1), 0, 1, 0, 100);
-    float stepy = map(noise(1), 0, 1, 0, 100);
-    println(stepx);
+    float stepx = (float)r.nextGaussian();
+    float stepy = (float)r.nextGaussian();
     
     x += stepx;
     y += stepy;
